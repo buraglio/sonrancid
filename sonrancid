@@ -184,7 +184,7 @@ sub ShowVersion {
 	return(0) if ($found_version);		# Only do this routine once
 	return(-1) if (/command authorization failed/i);
 	# the pager can not be disabled per-session on the PIX
-	if (/^(<-+ More -+>)/) {
+	if (/^(<-+ MORE -+>)/) {
 	    my($len) = length($1);
 	    s/^$1\s{$len}//;
 	}
@@ -449,7 +449,7 @@ sub ShowRedundancy {
 	return(1) if (/Line has invalid autocommand /);
 	return(1) if (/(Invalid (input|command) detected|Type help or )/i);
 	# the pager can not be disabled per-session on the PIX
-	if (/^(<-+ More -+>)/) {
+	if (/^(<-+ MORE -+>)/) {
 	    my($len) = length($1);
 	    s/^$1\s{$len}//;
 	}
@@ -483,7 +483,7 @@ sub ShowIDprom {
 	return(1) if (/Line has invalid autocommand /);
 	return(1) if (/(Invalid (input|command) detected|Type help or )/i);
 	# the pager can not be disabled per-session on the PIX
-	if (/^(<-+ More -+>)/) {
+	if (/^(<-+ MORE -+>)/) {
 	    my($len) = length($1);
 	    s/^$1\s{$len}//;
 	}
@@ -517,7 +517,7 @@ sub ShowInstallActive {
 	return(1) if (/(Invalid (input|command) detected|Type help or )/i);
 	return(-1) if (/command authorization failed/i);
 	# the pager can not be disabled per-session on the PIX
-	if (/^(<-+ More -+>)/) {
+	if (/^(<-+ MORE -+>)/) {
 	    my($len) = length($1);
 	    s/^$1\s{$len}//;
 	}
@@ -542,7 +542,7 @@ sub ShowEnv {
 	return(0) if ($found_env);		# Only do this routine once
 	return(-1) if (/command authorization failed/i);
 	# the pager can not be disabled per-session on the PIX
-	if (/^(<-+ More -+>)/) {
+	if (/^(<-+ MORE -+>)/) {
 	    my($len) = length($1);
 	    s/^$1\s{$len}//;
 	}
@@ -589,7 +589,7 @@ sub ShowRSP {
 	return(-1) if (/command authorization failed/i);
 	# return(1) if ($type !~ /^12[40]/);
 	# the pager can not be disabled per-session on the PIX
-	if (/^(<-+ More -+>)/) {
+	if (/^(<-+ MORE -+>)/) {
 	    my($len) = length($1);
 	    s/^$1\s{$len}//;
 	}
@@ -622,7 +622,7 @@ sub ShowGSR {
 	return(-1) if (/command authorization failed/i);
 	# return(1) if ($type !~ /^12[40]/);
 	# the pager can not be disabled per-session on the PIX
-	if (/^(<-+ More -+>)/) {
+	if (/^(<-+ MORE -+>)/) {
 	    my($len) = length($1);
 	    s/^$1\s{$len}//;
 	}
@@ -666,7 +666,7 @@ sub ShowBoot {
 	return(1) if (/(Open device \S+ failed|Error opening \S+:)/);
 	return(-1) if (/command authorization failed/i);
 	# the pager can not be disabled per-session on the PIX
-	if (/^(<-+ More -+>)/) {
+	if (/^(<-+ MORE -+>)/) {
 	    my($len) = length($1);
 	    s/^$1\s{$len}//;
 	}
@@ -706,7 +706,7 @@ sub ShowFlash {
 	return(1) if (/(Invalid (input|command) detected|Type help or )/i);
 	return(-1) if (/command authorization failed/i);
 	# the pager can not be disabled per-session on the PIX
-	if (/^(<-+ More -+>)/) {
+	if (/^(<-+ MORE -+>)/) {
 	    my($len) = length($1);
 	    s/^$1\s{$len}//;
 	}
@@ -770,7 +770,7 @@ sub DirSlotN {
 	    $_ = "$1" . sprintf("%43s", "") . "$3\n";
 	}
 	# the pager can not be disabled per-session on the PIX
-	if (/^(<-+ More -+>)/) {
+	if (/^(<-+ MORE -+>)/) {
 	    my($len) = length($1);
 	    s/^$1\s{$len}//;
 	}
@@ -794,7 +794,7 @@ sub ShowContAll {
 	# return(1) if ($type =~ /^(12[40]|7[05])/);
 	return(-1) if (/command authorization failed/i);
 	# the pager can not be disabled per-session on the PIX
-	if (/^(<-+ More -+>)/) {
+	if (/^(<-+ MORE -+>)/) {
 	    my($len) = length($1);
 	    s/^$1\s{$len}//;
 	}
@@ -859,7 +859,7 @@ sub ShowContCbus {
 	#return(1) if ($type !~ /^7[05]0/);
 	return(-1) if (/command authorization failed/i);
 	# the pager can not be disabled per-session on the PIX
-	if (/^(<-+ More -+>)/) {
+	if (/^(<-+ MORE -+>)/) {
 	    my($len) = length($1);
 	    s/^$1\s{$len}//;
 	}
@@ -910,7 +910,7 @@ sub ShowDebug {
 	return(1) if (/(Invalid (input|command) detected|Type help or )/i);
 	return(-1) if (/command authorization failed/i);
 	# the pager can not be disabled per-session on the PIX
-	if (/^(<-+ More -+>)/) {
+	if (/^(<-+ MORE -+>)/) {
 	    my($len) = length($1);
 	    s/^$1\s{$len}//;
 	}
@@ -941,7 +941,7 @@ sub ShowDiagbus {
 	return(1) if (/(Invalid (input|command) detected|Type help or )/i);
 	return(-1) if (/command authorization failed/i);
 	# the pager can not be disabled per-session on the PIX
-	if (/^(<-+ More -+>)/) {
+	if (/^(<-+ MORE -+>)/) {
 	    my($len) = length($1);
 	    s/^$1\s{$len}//;
 	}
@@ -1035,7 +1035,7 @@ REDUX:	tr/\015//d;
 	return(-1) if (/command authorization failed/i);
 	/^$/ && next;
 	# the pager can not be disabled per-session on the PIX
-	if (/^(<-+ More -+>)/) {
+	if (/^(<-+ MORE -+>)/) {
 	    my($len) = length($1);
 	    s/^$1\s{$len}//;
 	}
@@ -1333,7 +1333,7 @@ sub ShowInventory {
 	return(1) if (/(Invalid (input|command) detected|Type help or )/i);
 	return(-1) if (/command authorization failed/i);
 	# the pager can not be disabled per-session on the PIX
-	if (/^(<-+ More -+>)/) {
+	if (/^(<-+ MORE -+>)/) {
 	    my($len) = length($1);
 	    s/^$1\s{$len}//;
 	}
@@ -1373,7 +1373,7 @@ sub ShowModule {
 	next if (/^(\s*|\s*$cmd\s*)$/);
 	return(-1) if (/command authorization failed/i);
 	# the pager can not be disabled per-session on the PIX
-	if (/^(<-+ More -+>)/) {
+	if (/^(<-+ MORE -+>)/) {
 	    my($len) = length($1);
 	    s/^$1\s{$len}//;
 	}
@@ -1445,7 +1445,7 @@ sub ShowC7200 {
 	return(-1) if (/command authorization failed/i);
 	/^$/ && next;
 	# the pager can not be disabled per-session on the PIX
-	if (/^(<-+ More -+>)/) {
+	if (/^(<-+ MORE -+>)/) {
 	    my($len) = length($1);
 	    s/^$1\s{$len}//;
 	}
@@ -1496,7 +1496,7 @@ sub ShowVTP {
 	return(-1) if (/command authorization failed/i);
 	next if (/^Configuration last modified by/);
 	# the pager can not be disabled per-session on the PIX
-	if (/^(<-+ More -+>)/) {
+	if (/^(<-+ MORE -+>)/) {
 	    my($len) = length($1);
 	    s/^$1\s{$len}//;
 	}
@@ -1526,7 +1526,7 @@ sub ShowVLAN {
 	return(1) if (/Ambiguous command/i);
 	return(-1) if (/command authorization failed/i);
 	# the pager can not be disabled per-session on the PIX
-	if (/^(<-+ More -+>)/) {
+	if (/^(<-+ MORE -+>)/) {
 	    my($len) = length($1);
 	    s/^$1\s{$len}//;
 	}
@@ -1555,7 +1555,7 @@ sub WriteTerm {
 	return(-1) if (/command authorization failed/i);
 	return(-1) if (/% ?configuration buffer full/i);
 	# the pager can not be disabled per-session on the PIX
-	if (/^(<-+ More -+>)/) {
+	if (/^(<-+ MORE -+>)/) {
 	    my($len) = length($1);
 	    s/^$1\s{$len}//;
 	}
