@@ -1895,8 +1895,8 @@ sub DoNothing {print STDOUT;}
 
 # Main
 @commandtable = (
-#	{'show version'			=> 'ShowVersion'},
-#	{'show vcs'			=> 'ShowVCS'},
+	{'show version'			=> 'ShowVersion'},
+#	{'show status'			=> 'ShowStatus'},
 #	{'show idprom backplane',	=> 'ShowIDprom'},
 #	{'show install active'		=> 'ShowInstallActive'},
 #	{'show env all'			=> 'ShowEnv'},
@@ -1950,7 +1950,7 @@ sub DoNothing {print STDOUT;}
 #	{'show vlan-switch'		=> 'ShowVLAN'},
 #	{'show debug'			=> 'ShowDebug'},
 #	{'more system:running-config'	=> 'WriteTerm'},	# ASA/PIX
-	{'show running-config'		=> 'WriteTerm'},
+	{'show current-config'		=> 'WriteTerm'},
 #	{'write term'			=> 'WriteTerm'},
 );
 # Use an array to preserve the order of the commands and a hash for mapping
