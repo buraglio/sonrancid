@@ -616,7 +616,7 @@ proc run_commands { prompt command } {
     # per-vty basis).
     if { [ string compare "extreme" "$platform" ] } {
 	if [ regexp -- ".*> .*enable" "$prompt" ] {
-	    send "set length 0\r"
+	    send "no cli pager session\r"
 	    # This is ugly, but reduces code duplication, allowing the
 	    # subsequent expects to handle everything as normal.
 	    set command "set logging session disable;$command"
