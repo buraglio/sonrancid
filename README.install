@@ -1,0 +1,3 @@
+This is a really basic script to get the config from a SonicWall firewall.  It was tested on a smaller TZ210.  In order to work correctly the following will need to be added to the rancid-fe file:
+
+'sonicwall'        => 'sonrancid',
