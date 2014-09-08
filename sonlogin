@@ -652,7 +652,7 @@ proc run_commands { prompt command } {
 	    -re "^\[^\n\r]*$reprompt."		{ send_user -- "$expect_out(buffer)"
 						  exp_continue
 						}
-	    -re "^--More--\[\r\n]+"		{ # specific match c1900 pager
+	    -re "^--MORE--\[\r\n]+"		{ # specific match c1900 pager
 						  send " "
 						  exp_continue
 						}
@@ -667,10 +667,10 @@ proc run_commands { prompt command } {
 							}
 						  exp_continue
 						}
-	    -re "^ *--More--\[^\n\r]*"		{
+	    -re "^ *--MORE--\[^\n\r]*"		{
 						  send " "
 						  exp_continue }
-	    -re "^<-+ More -+>\[^\n\r]*"	{
+	    -re "^<-+ MORE -+>\[^\n\r]*"	{
 						  send_user -- "$expect_out(buffer)"
 						  send " "
 						  exp_continue }
