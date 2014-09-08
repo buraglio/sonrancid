@@ -1,3 +1,6 @@
 This is a really basic script to get the config from a SonicWall firewall.  It was tested on a smaller TZ210.  In order to work correctly the following will need to be added to the rancid-fe file:
 
 'sonicwall'        => 'sonrancid',
+
+
+The other part is the sonlogin, which is there to handle the prompt and pager, but in the interest of time I put this up without pager stuff working.  To properly use this you'll need to log in and set "no cli pager default", which is not optimal but I needed it now and I hate programming. 
