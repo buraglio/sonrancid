@@ -3,4 +3,4 @@ This is a really basic script to get the config from a SonicWall firewall.  It w
 'sonicwall'        => 'sonrancid',
 
 
-The other part is the sonlogin, which is there to handle the prompt and pager, but in the interest of time I put this up without pager stuff working.  To properly use this you'll need to log in and set "no cli pager default", which is not optimal but I needed it now and I hate programming. 
+The other part is the sonlogin, which is there to handle the prompt and pager, but in the interest of time I put this up without pager stuff working, so sonlogin is really not necessary (it uses clogin right now).  To properly use this you'll need to log in and set "no cli pager default", which is not optimal but I needed it now and I hate programming. 
