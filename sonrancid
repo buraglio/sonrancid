@@ -1604,6 +1604,9 @@ sub WriteTerm {
 	# Dog gone Cool matches to process the rest of the config
 	/^tftp-server flash /   && next; # kill any tftp remains
 	/^ntp clock-period /    && next; # kill ntp clock-period
+	/^system-uptime /    	&& next; # kill ntp system-uptime
+	/^checksum /    	&& next; # kill checksum
+	/^system-time /    && next; # kill ntp system-time
 	/^ length /		&& next; # kill length on serial lines
 	/^ width /		&& next; # kill width on serial lines
 	$lineauto = 1 if /^ modem auto/;
@@ -1614,6 +1617,31 @@ sub WriteTerm {
 	    next;
 	}
 	if (/^(enable secret) / && $filter_pwds >= 2) {
+	    ProcessHistory("ENABLE","","","!$1 <removed>\n");
+	    next;
+	}
+ 	# Remove the Sonicwall shared-secret junk	
+	if (/^(shared-secret) / && $filter_pwds >= 2) {
+	    ProcessHistory("ENABLE","","","!$1 <removed>\n");
+	    next;
+	}
+ 	# Remove the Sonicwall secret junk	
+	if (/^(secret) / && $filter_pwds >= 2) {
+	    ProcessHistory("ENABLE","","","!$1 <removed>\n");
+	    next;
+	}
+ 	# Remove the Sonicwall encryption junk	
+	if (/^(encryption) / && $filter_pwds >= 2) {
+	    ProcessHistory("ENABLE","","","!$1 <removed>\n");
+	    next;
+	}
+ 	# Remove the Sonicwall authentication junk	
+	if (/^(authentication) / && $filter_pwds >= 2) {
+	    ProcessHistory("ENABLE","","","!$1 <removed>\n");
+	    next;
+	}
+ 	# Remove the Sonicwall cli ftp password junk	
+	if (/^(cli ftp password) / && $filter_pwds >= 2) {
 	    ProcessHistory("ENABLE","","","!$1 <removed>\n");
 	    next;
 	}
@@ -1830,6 +1858,12 @@ sub WriteTerm {
 	}
 	# prune tacacs/radius server keys
 	if (/^((tacacs|radius)-server\s(\w*[-\s(\s\S+])*\s?key) (\d )?\w+/
+	    && $filter_pwds >= 1) {
+	    ProcessHistory("","","","!$1 <removed>$'"); next;
+	}
+	# prune tacacs/radius server keys for sonicwall
+	# if (/^((tacacs|radius)-server\s(\w*[-\s(\s\S+])*\s?key) (\d )?\w+/
+	if (/^(secret) /
 	    && $filter_pwds >= 1) {
 	    ProcessHistory("","","","!$1 <removed>$'"); next;
 	}
